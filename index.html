@@ -14,7 +14,11 @@
         Bem-vinda, Lu!
         <br>
         Seu diário: 15/03/2024
+        <br>
+        
+
     </div>
+    <div id="mensagem"> </div>
     <div id="imageContainer">
     </div>
  
@@ -25,17 +29,22 @@
                 .then(data => {
                     if (data.length > 0 && data[0].res && data[0].dia) {
                         const imagem = document.createElement('img');
+                        let mensagem;
                         const condition = data[0].res;
                         switch(condition) {
                             case 'A': 
+                            mensagem = "Aguardando..."
                                 imagem.src = "img/img.aguardando2.png";
                                 console.log("A")
                                 break;
                             case 'B':
+                            mensagem = "Bloqueado :("
                                 imagem.src = "img/img.bloqueado2.png";
                                 console.log("B")
                                 break;
                             case 'L':
+                            mensagem = "Liberado!! :)"
+
                                 imagem.src = "img/IMG.LIBERADO2.png";
                                 console.log("L")
                                 break;
@@ -43,7 +52,9 @@
                                 console.error('Condição desconhecida:', condition);
                         }
                         document.getElementById('imageContainer').appendChild(imagem);
-                    } else {
+                        const mensagemElement = document.getElementById('mensagem');
+                        const texto = document.createTextNode(mensagem);
+                        mensagemElement.appendChild(texto);                    } else {
                         console.error('Erro ao carregar imagem da API.');
                     }
                 })
