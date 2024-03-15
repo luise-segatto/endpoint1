@@ -1,8 +1,16 @@
+*{
+    font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 h1 {
     text-align: center;
+    
+    
 }
- 
+
 nav {
     background: rgb(43,211,246);
     background: linear-gradient(90deg, rgba(43,211,246,1) 0%, rgba(182,118,14,1) 49%, rgba(240,130,206,1) 90%);
@@ -14,17 +22,19 @@ nav {
     width: 100%!important;
     position: fixed;
     top: 0px;
+    left: 0;
     
 }
  
 footer {
+    width: 100%;
     background: rgb(43,211,246);
 background: linear-gradient(90deg, rgba(43,211,246,1) 0%, rgba(182,118,14,1) 49%, rgba(240,130,206,1) 90%);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 400px;
+    height: 490px;
     
 }
 .p{
@@ -33,6 +43,7 @@ background: linear-gradient(90deg, rgba(43,211,246,1) 0%, rgba(182,118,14,1) 49%
     align-items: center;
     text-align: center;
     height: 200px;
+    
 }
 
  
@@ -45,14 +56,17 @@ div {
 }
  
 body {
-    background-image: url(../img/backgroundimg.png);
-    background-repeat: no-repeat;
+    background: url(../img/backgroundimg.png);
     background-size: cover;
-   
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;
 }
  
 img {
-    height: 500px;
+    height: 400px;
+    position: fixed;
 }
  
 h1 {
@@ -74,17 +88,29 @@ footer {
     height: auto;
     position: fixed;
     bottom: 0px;
+    left: 0;
 }
- 
+/* @media only screen and (max-width: 1200px) {
+   
+    img {
+        max-width: 100%; 
+    }
+   
+    
+} */
 @media only screen and (max-width: 768px) {
     div {
         height: auto;
     }
     img {
         height: auto;
-        max-width: 100%;
+        max-width: 100%; 
     }
- 
+   
+    .p{
+        color: aliceblue;
+    }
+   
     footer {
         height: auto;
     }
