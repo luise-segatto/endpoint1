@@ -34,7 +34,7 @@ background: linear-gradient(90deg, rgba(43,211,246,1) 0%, rgba(182,118,14,1) 49%
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 490px;
+    height: auto;
     
 }
 .p{
@@ -65,8 +65,8 @@ body {
 }
  
 img {
-    height: 400px;
-    position: fixed;
+    height: 390px;
+    display: flex;
 }
  
 h1 {
@@ -81,14 +81,13 @@ p {
 }
 
 footer {
-    height: 200px;
-    width: 100%!important;
+    width: 1694px!important;
     display: flex;
     width: auto;
-    height: auto;
-    position: fixed;
+    height: 40px;
     bottom: 0px;
     left: 0;
+    position: fixed;
 }
 /* @media only screen and (max-width: 1200px) {
    
