@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semáforo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav><p>CONTROLE DE TRÂNSITO</p>
+     
+    </nav> 
+    <div class="p">  <br>
+        Bem-vinda, Lu!
+        <br>
+        Seu diário: 15/03/2024
+    </div>
+    <div id="imageContainer">
+    </div>
+ 
+    <script>
+        function carregarImagem() {
+            fetch('https://niloweb.com.br/transit-room/api/reg_endpoint.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0 && data[0].res && data[0].dia) {
+                        const imagem = document.createElement('img');
+                        const condition = data[0].res;
+                        switch(condition) {
+                            case 'A': 
+                                imagem.src = "img/img.aguardando2.png";
+                                console.log("A")
+                                break;
+                            case 'B':
+                                imagem.src = "img/img.bloqueado2.png";
+                                console.log("B")
+                                break;
+                            case 'L':
+                                imagem.src = "img/IMG.LIBERADO2.png";
+                                console.log("L")
+                                break;
+                            default:
+                                console.error('Condição desconhecida:', condition);
+                        }
+                        document.getElementById('imageContainer').appendChild(imagem);
+                    } else {
+                        console.error('Erro ao carregar imagem da API.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao conectar à API:', error);
+                });
+        }
+        window.onload = carregarImagem;
+    </script>
+    <footer><p>Todos os direitos reservados.</p></footer>
+</body>
+</html>
